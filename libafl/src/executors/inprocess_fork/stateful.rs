@@ -176,6 +176,13 @@ where
     pub fn harness_mut(&mut self) -> &mut H {
         self.harness_fn
     }
+
+    /// Retrieve the state, consuming the executor.
+    #[inline]
+    #[must_use]
+    pub fn into_state(self) -> ES {
+        self.exposed_executor_state
+    }
 }
 
 impl<H, HT, I, OT, S, SP, ES, EM, Z> HasObservers

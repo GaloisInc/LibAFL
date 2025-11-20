@@ -361,6 +361,13 @@ where
     pub fn hooks_mut(&mut self) -> &mut (InProcessHooks<I, S>, HT) {
         self.inner.hooks_mut()
     }
+
+    /// Retrieve the state, consuming the executor.
+    #[inline]
+    #[must_use]
+    pub fn into_state(self) -> ES {
+        self.exposed_executor_state
+    }
 }
 
 impl<H, HB, HT, I, OT, S, ES> HasInProcessHooks<I, S>
