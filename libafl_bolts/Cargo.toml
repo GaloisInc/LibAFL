@@ -157,6 +157,7 @@ clap = { workspace = true, features = [
 ], optional = true } # CLI parsing, for libafl_bolts::cli / the `cli` feature
 log = { workspace = true }
 pyo3 = { workspace = true, optional = true, features = ["serde", "macros"] }
+typeid = "1.0.3" # Safe type_eq that doesn't rely on std specialization
 
 # optional-dev deps (change when target.'cfg(accessible(::std))'.test-dependencies will be stable)
 serial_test = { workspace = true, optional = true, default-features = false, features = [
